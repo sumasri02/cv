@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>Subtract days from a date in JavaScript</h2>
+    <p id="result1"></p>
+
+    <p>Click below button to subtract 10 days to the Today's Date</p>
+    <button onclick="display()">click to subtract days</button>
+    <p></p>
+
+    <p id="result2"></p>
+
+    <script type="text/javascript">
+        var today = new Date();
+        var result1 = document.getElementById("result1");
+        var result2 = document.getElementById("result2");
+
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+
+        result1.innerHTML = "<b> Today's Date: " + 
+            mm + "/" + 
+            dd + "/" +
+            yyyy + 
+            "</b> </br />"; 
+            
+
+        function display() {
+            var tenDayBefore = today.getTime() - (10 * 24 * 60 * 60 * 1000);
+            today.setTime(tenDayBefore);
+
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+
+            result2.innerHTML = "<b> 10 days before Date: " +
+                mm + "/" +
+                dd + "/" +
+                yyyy +
+                "</b> </br />";
+
+            result2.innerHTML += "The day we get after subtracting is: " + today;
+        }
+    </script>
+</body>

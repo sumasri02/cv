@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Input types</title>
+</head>
+
+<body>
+
+
+    <!-- date manipulation using java script-->
+    <script type="text/javascript">
+        function setDateMinMax() {
+            var today = new Date();
+
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+
+            document.getElementById('dateele').setAttribute('max', (yyyy + '-' + mm + '-' + dd));
+
+            var fiveDayBefTime = today.getTime() - (5 * 24 * 60 * 60 * 1000);
+            var fiveDayBefDt = new Date().setTime(fiveDayBefTime);
+
+            dd = fiveDayBefDt.getDate();
+            mm = fiveDayBefDt.getMonth() + 1; //January is 0!
+            yyyy = fiveDayBefDt.getFullYear();
+
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+
+            document.getElementById('dateele').setAttribute('min', (yyyy + '-' + mm + '-' + dd));
+        }  
+    </script>
+
+
+    <input type="button" value="set min max date" onclick="setDateMinMax()" /> <br />
+
+    <fieldset>
+        <legend>Your head type </legend>
+        <input type="checkbox" id="baldhead" name="bald" />
+        <label for="baldhead">Bald head</label> <br />
+
+        <input type="checkbox" id="blackhair" name="blackhair" />
+        <label for="blackhair">Black Hair</label> <br />
+
+        <input type="checkbox" id="whitehair" name="whitehair" />
+        <label for="blackhair">Black Hair</label> <br />
+
+        <input type="checkbox" id="saltpepper" name="white and black hair" />
+        <label for="blackhair">Black Hair</label> <br />
+    </fieldset>
+
+    <label for="dateele">Select your date for last 5 days :
+        <input type="date" name="dateele" id="dateele" required /> <br />
+        <span class="valididy"></span>
+    </label>
+
+    <label for="localDateTime">Local date and time entry :</label>
+    <input type="datetime-local" name="loalDateTime" id="localDateTime" /> <br />
+
+    <label for="emailAddress">enter email address here :</label>
+    <input type="email" id="emailAddress" name="emailAddress" /> <br />
+
+    <label for="filename">Select a file name for your avatar:</label>
+    <input type="file" id="filename" name="filename" accept="image/png, image/jpg, image/*" /> <br />
+
+    <label for="hiddentxt">This is hidden input field</label>
+    <input type="hidden" id="hiddentxt" name="hiddentxt" value="hiddentxt" /> <br />
+
+    <label for="pranamam">Saluations to you</label>
+    <input type="image" id="pranamam" name="pranamam" alt="namaskar image" src="image/Sridha-rNikon 011.jpg"
+        height="150" width="150" /> <br />
+
+    <label for="monthinput">Month input field</label>
+    <input type="month" id="monthimput" name="monthimput" /> <br />
+
+    <label for="numberinput">This field accepts only numbers upto 3 dig:</label>
+    <input type="number" id="numberinput" name="numberinput" min="1" max="999" /> <br />
+
+    <fieldset>
+        <legend>Sliding bars</legend>
+        <input type="range" name="volumeBar" id="volumeBar" min="0" max="50" />
+        <label for="volumeBar">Volume sliding bar:</label>
+        <br />
+        <input type="range" name="trebleBar" id="trebleBar" min="0" max="50" />
+        <label for="trebleBar">Treble sliding bar:</label>
+        <br />
+        <input type="range" name="bassBar" id="bassBar" min="0" max="50" />
+        <label for="bassBar">Bass sliding Bar</label>
+        <br />
+        <label for="BalanceL">L</label>
+        <input type="range" name="balanceBar" id="balanceBar" min="0" max="50" />
+        <label for="BalanceR">R</label>
+        <br />
+    </fieldset>
+    
+    <fieldset>
+        <legend>Select the food you like most</legend>
+
+        <input type="radio" name="sambhar" id="vathaKuzambu" value="vathaKuzumby" />
+        <label for="vathaKuzamby">Vatha Kuzambu</label> <br />
+
+        <input type="radio" name="sambhar" id="morKuzambu" value="morKuzambu" />
+        <label for="morKuzambu">Mor Kuzambu</label> <br />
+
+        <input type="radio" name="sambhar" id="podiKuzambu" value="podiKuzambu" />
+        <label for="podiKuzambu">Podi Kuzambu</label> <br />
+
+        <input type="radio" name="sambhar" id="onionSambar" value="onionSambar" />
+        <label for="onionSambar">Onion sambar</label> <br />
+    </fieldset>
+
+    <table id="colors" title="Color table for head, body and footer">
+        <caption>Caption is color table</caption>
+        <thead>
+            <tr style="color: blueviolet; font-weight: bold; font-size: large; background-color: aqua;">
+                <th scope="col">Detail</th>
+                <th scope="col">Color</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><label for="head">Head color </label></td>
+                <td><input type="color" value="#e66465" id="head" name="head" /> </td>
+            </tr>
+            <tr>
+                <td><label for="body">Body color </label></td>
+                <td><input type="color" value="#65e6c6" id="body" name="body" /></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="col">data</th>
+                <th scope="col">Colors</th>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+
+</html>

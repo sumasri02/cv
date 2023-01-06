@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Button example</title>
+</head>
+
+<body>
+    <form action="burger.html" method="post" id="resetForm">
+        <!-- format the layout of the form using table-->
+        <table>
+            <tr>
+                <td>
+                    <label for="fname" >First Name :</label>
+                </td>
+                <td>
+                    <input type="text" name="fname" id="fname" size="20" min="5" max="30" 
+                    title="min 5 and max 30 chars"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="lname" >Last Name :</label>
+                </td>
+                <td>
+                    <input type="text" name="lname" id="lname" size="20" min="5" max="30" 
+                    title="min 5 and max 30 chars"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="age" >age :</label>
+                </td>
+                <td>
+                    <input type="number" name="age" id="age" min="18" max="110" 
+                    title="min 18 max 110"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="address1" >Address :</label>
+                </td>
+                <td>
+                    <input type="text" name="address1" id="address1" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="address2" >Address :</label>
+                </td>
+                <td>
+                    <input type="text" name="address2" id="address2" 
+                    title="Address line 2" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="telephone" >Telephone :</label>
+                </td>
+                <td>
+                    <input type="tel" name="telephone" id="telephone" size="12"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+                    <small>pattern 123-456-7890</small>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="timeentry" >Time entered :</label>
+                </td>
+                <td>
+                    <input type="time" name="timeentry" id="timeentry">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="httpsurl" >enter HTTPS url here:</label>
+                </td>
+                <td>
+                    <input type="url" name="httpsurl" id="httpsurl" 
+                    placeholder="https://cglearing.udemy.com/the-complete-development-bookcamp" 
+                    pattern="https://.*" size="60" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="weekchoose" >choose a week:</label>
+                </td>
+                <td>
+                    <input type="week" name="weekchoose" id="weekchoose" >
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <input type="submit" value="Submit" title="Submit form for further processing" />
+                    <input type="reset" value="Reset" title="Clears all the values to space" />
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+
+</html>
